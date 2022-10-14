@@ -19,7 +19,12 @@ alt="Naruto Poster" class="featured-img" />
 
   <div class="movies-list">
     <div class="movie" v-for="movie in movies" :key="movie.imdbID">
-      {{ movie.Title }}
+      <router-link :to="'/movie/' + movie.imdbID" class="movie-link"> 
+      <div class="product-image">
+        <img :src="movie.Poster" alt="Movie Poster" />
+        <div class="type">{{ movie.Type }}</div>
+      </div>
+      </router-link>
     </div>
   </div>
   </div>
